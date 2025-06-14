@@ -67,6 +67,13 @@ int initialize_screen(struct s_screen *screen)
     return 0;
 }
 
+void set_pixels(struct s_screen *screen)
+{
+    for(size_t i=0; i<PIXEL_BY_WIDTH; i++)
+        for(size_t j=0; j<PIXEL_BY_HEIGHT; j++)
+            screen->pixels[i][j] = ((i % (j+1)) != 0);
+}
+
 void update_screen(struct s_screen *screen)
 {
     SDL_SetRenderDrawColor(screen->r, 0, 0, 0, 255);
@@ -219,6 +226,7 @@ void emulate(struct s_emulator *emulator)
     while(!emulator->input.quit)
     {
         update_event(&emulator->input);
+        set_pixels(&emulator->screen);
         update_screen(&emulator->screen);
         SDL_Delay(20);
     }
@@ -243,6 +251,6 @@ int main(int argc, char *argv[])
         emulate(&emulator);
         destroy_emulator(&emulator);
     }
-    printf("Status : %i", status);
+    //printf("Status : %i\n", status);
     return status;
 }
