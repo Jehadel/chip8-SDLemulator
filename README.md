@@ -2,6 +2,8 @@
 CHIP8 emulator using SDL2 following different ressources :
 
 * [http://devernay.free.fr/hacks/chip8/C8TECH10.HTM](http://devernay.free.fr/hacks/chip8/C8TECH10.HTM)
+  
+* [https://chip8.gulrak.net/reference/opcodes/](https://chip8.gulrak.net/reference/opcodes/)
 
 * [https://zestedesavoir.com/tutoriels/1148/introduction-a-lemulation-console/](https://zestedesavoir.com/tutoriels/1148/introduction-a-lemulation-console/)
 
